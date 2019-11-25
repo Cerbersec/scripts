@@ -201,6 +201,7 @@ alias phs="python3 -m http.server "
 alias http_srv="(cd /srv/scripts && phs 80)"
 alias htbconnect="sudo openvpn ~/Desktop/HackTheBox/x3ntr.ovpn"
 alias cdhtb="cd ~/Desktop/HackTheBox/HackTheBox"
+alias johnrock="john --wordlist=/usr/share/wordlists/rockyou.txt "
 
 ###### FUNCTIONS #######
 

@@ -202,6 +202,8 @@ alias http_srv="(cd /srv/scripts && phs 80)"
 alias htbconnect="sudo openvpn ~/Desktop/HackTheBox/x3ntr.ovpn"
 alias cdhtb="cd ~/Desktop/HackTheBox/HackTheBox"
 alias johnrock="john --wordlist=/usr/share/wordlists/rockyou.txt "
+alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
+alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
 
 ###### FUNCTIONS #######
 

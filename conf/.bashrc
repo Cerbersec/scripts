@@ -196,6 +196,7 @@ alias nmap-full="sudo nmap -sV -p- -oA full "
 alias nmap-udp="sudo nmap -sU -oA udp "
 alias gob="gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -u "
 alias gobphp="gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php -u "
+alias ghidra="/opt/ghidra_9.1.1/ghidraRun"
 alias ss="searchsploit "
 alias phs="python3 -m http.server "
 alias http_srv="(cd /srv/scripts && phs 80)"
@@ -239,3 +240,5 @@ function get-php-reverse {
 }
 
 
+# JAVA JDK 11 for Ghidra
+export PATH=/opt/jdk-11.0.5+10/bin:$PATH

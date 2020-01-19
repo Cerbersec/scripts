@@ -43,6 +43,13 @@ python3 -c 'import pty; pty.spawn("/bin/bash")'
 CTRL + Z
 stty raw -echo
 F+G+ENTER
+export TERM=xterm
+~~~
+
+Fix terminal
+~~~
+stty -a 34 cols 136
+stty rows
 ~~~
 
 Inject PHP into image

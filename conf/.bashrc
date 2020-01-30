@@ -242,4 +242,4 @@ function get-php-reverse {
 
 
 # JAVA JDK 11 for Ghidra
-export PATH=/opt/jdk-11.0.5+10/bin:$PATH
+export PATH=/opt/jdk-11/bin:$PATH

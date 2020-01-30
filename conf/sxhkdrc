@@ -1,0 +1,76 @@
+#
+# wm independent hotkeys
+#
+
+# terminal emulator
+ctrl + b + Return
+	konsole
+	#urxvt
+
+# program launcher
+ctrl + b + @space
+	dmenu_run
+
+# make sxhkd reload its configuration files:
+ctrl + b + Escape
+	pkill -USR1 -x sxhkd
+
+#
+# bspwm hotkeys
+#
+
+# quit/restart bspwm
+ctrl + alt + b + {q,r}
+	bspc {quit,wm -r}
+
+# close and kill
+ctrl + b + q
+	bspc node -{c,k}
+
+# alternate between the tiled and monocle layout
+ctrl + b + m
+	bspc desktop -l next
+
+#
+# state/flags
+#
+
+# toggle floating
+ctrl + b + f
+	bspc node focused.tiled -t floating || bspc node focused.floating -t tiled
+
+# set the window fullscreen
+ctrl + b + z
+	bspc node focused.tiled -t fullscreen || bspc node focused.fullscreen -t tiled
+
+# set the node flags
+ctrl + b + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
+
+# focus the node in the given direction
+alt + {Left,Down,Up,Right}
+	bspc node -f {west,south,north,east}
+
+# swap the node in the given direction
+alt + ctrl + {Left,Down,Up,Right}
+	bspc node -s {west,south,north,east}
+
+#
+# move/resize
+#
+
+# expand a window by moving one of its side outward
+shift + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# contract a window by moving one of its side inward
+shift + ctrl + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# move a floating window
+ctrl + b + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}

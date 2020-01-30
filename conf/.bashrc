@@ -198,14 +198,14 @@ alias gob="gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-med
 alias gobphp="gobuster dir -w /usr/share/dirbuster/wordlists/directory-list-2.3-medium.txt -x .php -u "
 alias ghidra="/opt/ghidra_9.1.1/ghidraRun"
 alias ss="searchsploit "
-alias phs="python3 -m http.server "
-alias http_srv="(cd /srv/scripts && phs 80)"
-alias htbconnect="sudo openvpn ~/Desktop/HackTheBox/x3ntr.ovpn"
-alias cdhtb="cd ~/Desktop/HackTheBox/HackTheBox"
+alias phs="sudo python3 -m http.server "
+alias http_srv="(cd /opt/scripts && phs 80)"
+alias htbconnect="sudo openvpn ~/htb/cerbersec.ovpn"
+alias cdhtb="cd ~/htb/boxes"
 alias johnrock="john --wordlist=/usr/share/wordlists/rockyou.txt "
 alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1])"'
 alias urldecode='python -c "import sys, urllib as ul; print ul.unquote_plus(sys.argv[1])"'
-alias htbrecon='/srv/HTBRecon/htbrecon.py'
+alias htbrecon='/opt/HTBRecon/htbrecon.py'
 
 ###### FUNCTIONS #######
 
